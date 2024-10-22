@@ -1,3 +1,7 @@
 {
-  "Datum: , Summa: 0.0, Kategori: }": "{\n  \"amount\": 0.0,\n  \"localDate\": \"\",\n  \"expenseCategory\": \"\"\n}"
+  "22/10/2024": {
+    "expenseCategory": "OTHER",
+    "amount": 200.0,
+    "localDate": "22/10/2024"
+  }
 }

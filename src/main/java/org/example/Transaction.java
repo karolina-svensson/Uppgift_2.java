@@ -3,12 +3,12 @@ package org.example;
 public class Transaction {
     private double amount;
     private String localDate;
-    private String expenseCategory;
+   // private String expenseCategory;
 
-    public Transaction(String expenseCategory, String localDate, double amount) {
+    public Transaction(String localDate, double amount) {
         this.localDate = localDate;
         this.amount = amount;
-        this.expenseCategory = expenseCategory;
+       // this.expenseCategory = expenseCategory;
 
     }
 
@@ -18,9 +18,17 @@ public class Transaction {
     public String toString() {
         return "Datum: " + localDate +
                 ", Summa: " + amount +
-                ", Kategori: " + expenseCategory +
+              //  ", Kategori: " + expenseCategory +
                 "}";
 
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getLocalDate() {
+        return localDate;
     }
 }
 

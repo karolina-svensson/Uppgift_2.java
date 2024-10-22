@@ -2,7 +2,6 @@ package org.example;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class BudgetTracker {
@@ -22,30 +21,40 @@ public class BudgetTracker {
             case 2:
                 Scanner input = new Scanner(System.in);
                 String expenseCategory = "";
-                String localDate = "";
+                //String localDate = "";
                 double amount = 0;
                 ExpenseStorage expenseStorage = new ExpenseStorage();
                 expenseStorage.readFile();
-                Expense expense = new Expense(expenseCategory, localDate, amount);
-                HashMap<Expense, String> expenses = new HashMap<>();
+               // Expense expense = new Expense(localDate, amount, expenseCategory);
+                // ändrade ordning för att matcha konstructorn och tog bort
+                // du skapar expense av inputs
+                HashMap<String, Expense> expenses = new HashMap<>();
+                // ändrade ordning...
+                // men ta bort för du har din lista i expenseStorage
                 System.out.print("Ange kategori för utgift: \n" + "Food \n" + "Transportation \n" + "Amusement \n" + "Other \n");
                 expenseCategory = input.nextLine();
 
 
                System.out.println("Ange datum (DD/MM/YYYY) för utgift: ");
-               localDate = input.nextLine();
+               String localDate = input.nextLine();
 
                 System.out.println("Ange summa för utgift: ");
                 amount = input.nextDouble();
 
-                expenses.put(new Expense(expenseCategory, localDate, amount), expense.toString());
-                expenseStorage.saveToFile(expense);
+                Expense newExpense = new Expense(localDate, amount, expenseCategory);
+                expenses.put(newExpense.getLocalDate(), newExpense);
+                // tog bort att du skapar den i din put, du måste alltid lägga till nyckeln först och sen
+                // själva expensen
+                // ändrade ordning för att matcha konstructorn
+                expenseStorage.saveToFile(newExpense);
 
-                for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
+               /* for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
                 System.out.println("Lista av utgifter: " );
-                    System.out.println(entry.getKey());
+                    System.out.println(entry.getKey());*/
+               // flytta det här till din Expensestorage där din faktiska lista finns
+                // alltså expenselist
                 break;
-                }
+               // }
             case 3:
                 System.out.println("Vänligen välj inkomst att ändra eller ta bort.");
                 // Här listas användarens inkomster
@@ -57,15 +66,19 @@ public class BudgetTracker {
                 amount = 0;
                 expenseStorage = new ExpenseStorage();
                 expenseStorage.readFile();
-                expense = new Expense(expenseCategory, localDate, amount);
+                //expense = new Expense(localDate, amount, expenseCategory);
+                // ändrade ordning för att matcha konstructorn och tog bort...
                 expenses = new HashMap<>();
-                for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
+               /* for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
                     System.out.println("Vänligen välj utgift att ändra eller ta bort: " );
                     System.out.println(entry.getKey());
-
+*/
+                // flytta det här till din Expensestorage där din faktiska lista finns
+                // alltså expenselist
                 // Här listas användarens utgifter
                 break;
-                }
+               // }
+            // du har en hel del } på helt fel plats. break avslutar switch case
                     case 5:
                         break;
 
