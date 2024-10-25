@@ -1,10 +1,10 @@
 package org.example;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class BudgetTracker {
+
     public static void main(String[] args) throws IOException {
         TryCatch tryCatch1 = new TryCatch();
         Scanner sc = new Scanner(System.in);
@@ -16,24 +16,40 @@ public class BudgetTracker {
 
         switch (choice) {
             case 1:
+                /*Scanner input1 = new Scanner(System.in);
+                String incomeCategory = "";
+                double amount = 0;
 
+                //Kallar på klassen IncomeStorage för att använda metoderna där
+                IncomeStorage incomeStorage = new IncomeStorage();
+                incomeStorage.readFile();
+
+                System.out.println("Ange kategori för inkomst: \n" + "Salary \n" + "Gift \n" + "Other \n");
+                incomeCategory = input1.nextLine();
+
+                System.out.println("Ange datum (DD/MM/YYYY) för inkomst: ");
+                String localDate = input1.nextLine();
+
+                System.out.println("Ange summa för inkomst: ");
+                amount = input1.nextDouble();
+
+
+                //Nytt Income objekt efter användaren angett variablerna localDate, amount och incomeCategory
+                Income newIncome = new Income(localDate, amount, incomeCategory);
+                // newIncome adderas till incomelist Hashmappen i IncomeStorage
+                incomeStorage.getIncomelist().put(newIncome.getLocalDate(), newIncome);
+                incomeStorage.saveToFile(newIncome);*/
                 break;
             case 2:
                 Scanner input = new Scanner(System.in);
                 String expenseCategory = "";
-                //String localDate = "";
                 double amount = 0;
+                // Se kommentarer i "case 1", använder samma kod och metoder
                 ExpenseStorage expenseStorage = new ExpenseStorage();
                 expenseStorage.readFile();
-               // Expense expense = new Expense(localDate, amount, expenseCategory);
-                // ändrade ordning för att matcha konstructorn och tog bort
-                // du skapar expense av inputs
-                HashMap<String, Expense> expenses = new HashMap<>();
-                // ändrade ordning...
-                // men ta bort för du har din lista i expenseStorage
+
                 System.out.print("Ange kategori för utgift: \n" + "Food \n" + "Transportation \n" + "Amusement \n" + "Other \n");
                 expenseCategory = input.nextLine();
-
 
                System.out.println("Ange datum (DD/MM/YYYY) för utgift: ");
                String localDate = input.nextLine();
@@ -41,22 +57,19 @@ public class BudgetTracker {
                 System.out.println("Ange summa för utgift: ");
                 amount = input.nextDouble();
 
+
                 Expense newExpense = new Expense(localDate, amount, expenseCategory);
-                expenses.put(newExpense.getLocalDate(), newExpense);
-                // tog bort att du skapar den i din put, du måste alltid lägga till nyckeln först och sen
-                // själva expensen
-                // ändrade ordning för att matcha konstructorn
+
+                expenseStorage.getExpenselist().put(newExpense.getLocalDate(), newExpense);
                 expenseStorage.saveToFile(newExpense);
 
-               /* for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
-                System.out.println("Lista av utgifter: " );
-                    System.out.println(entry.getKey());*/
-               // flytta det här till din Expensestorage där din faktiska lista finns
-                // alltså expenselist
                 break;
-               // }
+
             case 3:
                 System.out.println("Vänligen välj inkomst att ändra eller ta bort.");
+                System.out.println("Lista av inkomster: ");
+                System.out.println();
+
                 // Här listas användarens inkomster
                 break;
             case 4:
@@ -68,7 +81,7 @@ public class BudgetTracker {
                 expenseStorage.readFile();
                 //expense = new Expense(localDate, amount, expenseCategory);
                 // ändrade ordning för att matcha konstructorn och tog bort...
-                expenses = new HashMap<>();
+
                /* for(Map.Entry<Expense, String> entry : expenses.entrySet()) {
                     System.out.println("Vänligen välj utgift att ändra eller ta bort: " );
                     System.out.println(entry.getKey());

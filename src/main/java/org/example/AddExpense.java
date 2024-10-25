@@ -1,9 +1,12 @@
 package org.example;
+//Denna klassen verkar inte användas...
+
 
 public class AddExpense {
-private ExpenseCategory expenseCategory;
+/*private ExpenseCategory expenseCategory;
 // ändrade här inne pga bröt ut Enum
-public void setExpenseCategory(String expenseCategory) {
+//Verkar inte använda...
+    public void setExpenseCategory(String expenseCategory) {
     switch (expenseCategory) {
         case "Food":
             this.expenseCategory = ExpenseCategory.FOOD;
@@ -18,7 +21,7 @@ public void setExpenseCategory(String expenseCategory) {
             this.expenseCategory = ExpenseCategory.OTHER;
             break;
     }
-}
+}*/
 
 }
 

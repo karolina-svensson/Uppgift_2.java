@@ -1,13 +1,22 @@
 package org.example;
 
-/*
 public class Income extends Transaction {
-    public Income(String incomeCategory, String localDate,double amount) {
-        super(incomeCategory, localDate, amount);
-    }
 
-    public enum incomeCategory {
-        SALARY, GIFT, OTHER
+    private IncomeCategory incomeCategory;
+
+    public Income(String localDate,double amount, String category) {
+        super(localDate, amount);
+        switch (category) {
+            case "Salary":
+                this.incomeCategory = IncomeCategory.SALARY;
+                break;
+            case "Gift":
+                this.incomeCategory = IncomeCategory.GIFT;
+                break;
+            case "Other":
+                this.incomeCategory = IncomeCategory.OTHER;
+
+        }
     }
 }
-*/
+
