@@ -61,5 +61,10 @@
     "expenseCategory": "OTHER",
     "amount": 100.0,
     "localDate": "23/09/2024"
+  },
+  "25/10/2024": {
+    "expenseCategory": "OTHER",
+    "amount": 100.0,
+    "localDate": "25/10/2024"
   }
 }

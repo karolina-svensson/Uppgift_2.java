@@ -10,7 +10,10 @@ import java.util.Map;
 
 public class IncomeStorage {
     private Map<String, Income> incomelist;
-    private String filename = "src/main/budgettracker.json";
+    // du behöver ha olika json filer, en för income och en för expense
+    // jag skapade en ny för income, du kan döpa om den andra eller bara låta den va spelar ingen roll
+    private String filename = "src/main/income.json";
+    //private String filename = "src/main/budgettracker.json";
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public IncomeStorage() {
