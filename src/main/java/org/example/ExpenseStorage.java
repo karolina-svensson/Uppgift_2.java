@@ -25,11 +25,11 @@ public class ExpenseStorage {
      Reader reader = new FileReader(new File(filename));
 
      expenselist = gson.fromJson(reader, type);
-        System.out.println("Lista av utgifter: ");
-        for (Map.Entry<String, Expense> entry : expenselist.entrySet()) {
+        //System.out.println("Lista av utgifter: ");
+        //for (Map.Entry<String, Expense> entry : expenselist.entrySet()) {
 
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
+            //System.out.println(entry.getKey() + ": " + entry.getValue());
+        //}
     }
     public void saveToFile(Expense expense) throws IOException {
         expenselist.put(expense.getLocalDate(), expense);

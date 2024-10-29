@@ -10,24 +10,23 @@ import java.util.Map;
 
 public class IncomeStorage {
     private Map<String, Income> incomelist;
-    // du behöver ha olika json filer, en för income och en för expense
-    // jag skapade en ny för income, du kan döpa om den andra eller bara låta den va spelar ingen roll
+
     private String filename = "src/main/income.json";
     //private String filename = "src/main/budgettracker.json";
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
+
     public IncomeStorage() {
     }
-    public void readFile() throws IOException {
+    public String readFile() throws IOException {
         Type type = new TypeToken<Map<String, Income>>() {}.getType();
 
         Reader reader = new FileReader(new File(filename));
 
         incomelist = gson.fromJson(reader, type);
-        System.out.println("Lista av inkomster: ");
-        for (Map.Entry<String, Income> entry : incomelist.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
+
+
+        return "";
     }
     public void saveToFile(Income income) throws IOException {
         incomelist.put(income.getLocalDate(), income);

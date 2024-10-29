@@ -3,5 +3,45 @@
     "incomeCategory": "SALARY",
     "amount": 15000.0,
     "localDate": "25/10/2024"
+  },
+  "07/07/2024": {
+    "incomeCategory": "OTHER",
+    "amount": 200.0,
+    "localDate": "07/07/2024"
+  },
+  "31/08/2024": {
+    "incomeCategory": "OTHER",
+    "amount": 100.0,
+    "localDate": "31/08/2024"
+  },
+  "19/05/2024": {
+    "incomeCategory": "GIFT",
+    "amount": 800.0,
+    "localDate": "19/05/2024"
+  },
+  "30/02/2024": {
+    "incomeCategory": "OTHER",
+    "amount": 200.0,
+    "localDate": "30/02/2024"
+  },
+  "01/06/2024": {
+    "incomeCategory": "GIFT",
+    "amount": 500.0,
+    "localDate": "01/06/2024"
+  },
+  "25/11/2024": {
+    "incomeCategory": "SALARY",
+    "amount": 5000.0,
+    "localDate": "25/11/2024"
+  },
+  "07/06/2024": {
+    "incomeCategory": "OTHER",
+    "amount": 100.0,
+    "localDate": "07/06/2024"
+  },
+  "20/05/2024": {
+    "incomeCategory": "GIFT",
+    "amount": 50.0,
+    "localDate": "20/05/2024"
   }
 }

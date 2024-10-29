@@ -1,52 +1,4 @@
 {
-  "22/10/2024": {
-    "amount": 200.0,
-    "localDate": "22/10/2024"
-  },
-  "10/12/2024": {
-    "amount": 200.0,
-    "localDate": "10/12/2024"
-  },
-  "25/09/2023": {
-    "amount": 150.0,
-    "localDate": "25/09/2023"
-  },
-  "12/12/2023": {
-    "amount": 500.0,
-    "localDate": "12/12/2023"
-  },
-  "01/01/2024": {
-    "amount": 149.0,
-    "localDate": "01/01/2024"
-  },
-  "02/04/2024": {
-    "amount": 1490.0,
-    "localDate": "02/04/2024"
-  },
-  "14/08/2024": {
-    "amount": 300.0,
-    "localDate": "14/08/2024"
-  },
-  "07/07/2023": {
-    "amount": 5500.0,
-    "localDate": "07/07/2023"
-  },
-  "24/12/2023": {
-    "amount": 500.0,
-    "localDate": "24/12/2023"
-  },
-  "14/02/2024": {
-    "amount": 1000.0,
-    "localDate": "14/02/2024"
-  },
-  "11/11/2023": {
-    "amount": 260.0,
-    "localDate": "11/11/2023"
-  },
-  "10/10/2024": {
-    "amount": 100.0,
-    "localDate": "10/10/2024"
-  },
   "30/09/2023": {
     "expenseCategory": "FOOD",
     "amount": 160.0,
@@ -66,5 +18,25 @@
     "expenseCategory": "OTHER",
     "amount": 100.0,
     "localDate": "25/10/2024"
+  },
+  "16/02/2024": {
+    "expenseCategory": "OTHER",
+    "amount": 200.0,
+    "localDate": "16/02/2024"
+  },
+  "15/07/2024": {
+    "expenseCategory": "FOOD",
+    "amount": 100.0,
+    "localDate": "15/07/2024"
+  },
+  "12/11/2023": {
+    "expenseCategory": "TRANSPORTATION",
+    "amount": 100.0,
+    "localDate": "12/11/2023"
+  },
+  "17/07/2024": {
+    "expenseCategory": "AMUSEMENT",
+    "amount": 500.0,
+    "localDate": "17/07/2024"
   }
 }

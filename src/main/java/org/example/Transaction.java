@@ -3,25 +3,23 @@ package org.example;
 public class Transaction {
     private double amount;
     private String localDate;
-   // private String expenseCategory;
+    //private String category;
 
     public Transaction(String localDate, double amount) {
         this.localDate = localDate;
         this.amount = amount;
-       // this.expenseCategory = expenseCategory;
+        //this.category = category;
 
     }
 
-
-
-    @Override
+    /*@Override
     public String toString() {
         return "Datum: " + localDate +
                 ", Summa: " + amount +
-              //  ", Kategori: " + expenseCategory +
-                "}";
+               //", Kategori: " + category +
+                "}";*/
 
-    }
+
 
     public double getAmount() {
         return amount;
@@ -31,5 +29,15 @@ public class Transaction {
         return localDate;
     }
 }
+    /*@Override
+    public String toString() {
+        return
+                "Datum: " + localDate +
+                ", Summa: " + amount +
+                ", Kategori: " + category +
+                "}";}*/
+
+
+
 
 
