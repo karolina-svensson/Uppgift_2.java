@@ -13,6 +13,7 @@ public class BudgetTracker {
         TryCatch tryCatch1 = new TryCatch();
         Scanner sc = new Scanner(System.in);
         ArrayList<Double> incomeSums = new ArrayList<>();
+        ArrayList<Double> expenseSums = new ArrayList<>();
 
         IncomeStorage incomeStorage = new IncomeStorage();
         incomeStorage.readFile();
@@ -23,51 +24,42 @@ public class BudgetTracker {
         User user1 = new User("Bengt", "Bengtsson");
         System.out.println("Användare: " + user1.getFirstName() + " " + user1.getLastName());
 
-        System.out.println("Välkommen till Budgify, din personliga budgettapp! Vänligen välj ett av följande val:\n" + "1. Lägg till inkomst\n" + "2. Lägg till utgift\n" + "3. Ta bort inkomst\n" + "4. Ta bort utgift\n" + "5. Se budget\n" + "0. Avsluta programmet");
+        System.out.println("Välkommen till Budgify, din personliga budgettapp! Vänligen välj ett av följande val:\n" + "1. Lägg till inkomst\n" + "2. Lägg till utgift\n" + "3. Ta bort inkomst\n" + "4. Ta bort utgift\n" + "5. Se budget\n" + "6. Avsluta programmet");
         int choice = tryCatch1.tryCatch1();
-
 
         switch (choice) {
             case 1:
                 System.out.println("Ange kategori för inkomst: \n" + "Salary \n" + "Gift \n" + "Other \n");
                 String incomeCategory = sc.next();
 
-
                 System.out.println("Ange datum (DD/MM/YYYY) för inkomst: ");
                 String localDate = sc.next();
 
                 System.out.println("Ange summa för inkomst: ");
                 double incomeAmount = sc.nextDouble();
-                incomeSums.add(incomeAmount);
-
 
                 //Nytt Income objekt efter användaren angett variablerna localDate, amount och incomeCategory
                 Income newIncome = new Income(localDate, incomeAmount, incomeCategory);
-                // newIncome adderas till incomelist Hashmappen i IncomeStorage
 
+                // newIncome adderas till incomelist Hashmappen i IncomeStorage
                 incomeStorage.getIncomelist().put(newIncome.getLocalDate(), newIncome);
                 incomeStorage.saveToFile(newIncome);
-
-
                 break;
             case 2:
                 System.out.print("Ange kategori för utgift: \n" + "Food \n" + "Transportation \n" + "Amusement \n" + "Other \n");
                 String expenseCategory = sc.next();
 
-               System.out.println("Ange datum (DD/MM/YYYY) för utgift: ");
-               String expLocalDate = sc.next();
+                System.out.println("Ange datum (DD/MM/YYYY) för utgift: ");
+                String expLocalDate = sc.next();
 
                 System.out.println("Ange summa för utgift: ");
                 double expenseAmount = sc.nextDouble();
-
 
                 Expense newExpense = new Expense(expLocalDate, expenseAmount, expenseCategory);
 
                 expenseStorage.getExpenselist().put(newExpense.getLocalDate(), newExpense);
                 expenseStorage.saveToFile(newExpense);
-
                 break;
-
             case 3:
                 System.out.println("Vänligen välj inkomst att ta bort genom att ange (DD/MM/YYYY): ");
                 //här skrivs alla inkomster från hashmapen incomelist ut
@@ -84,22 +76,44 @@ public class BudgetTracker {
 
                 System.out.println(new Gson().toJson(expenseStorage.getExpenselist()).toString());
                 break;
-                    case 5:
-                        System.out.println(incomeStorage.getIncomelist().values().toString());
+            case 5:
 
+                double incomeTotal = 0;
+                for (Income income : incomeStorage.getIncomelist().values()) {
+                    System.out.println("Inkomster: " + income.getAmount());
+                    /*Lägger till alla inkomster i en arraylista för att seden göra samma med utgifter och sen
+                    subtrahera utgifter från inkomster*/
+                    incomeSums.add(income.getAmount());
+                    incomeTotal = 0;
+                    for (double num : incomeSums) {
+                        incomeTotal += num;
 
-                        //System.out.println(entry.getKey() + ": " + entry.getValue());
-                        //System.out.println("Inkomster: " + new Gson().toJson(incomeStorage.getIncomelist()).toString());
-                        //System.out.println("Utgifter:" + new Gson().toJson(expenseStorage.getExpenselist()).toString());
+                    }
 
+                }
+                System.out.println("Totala inomster: " + incomeTotal);
 
-                        //System.out.printf("Budget kvar: " + .get(incomeNums));
-                        break;
-            case 0:
+                double expenseTotal = 0;
+                for (Expense expense : expenseStorage.getExpenselist().values()) {
+                    System.out.println("Utgifter: " + expense.getAmount());
+                    expenseSums.add(expense.getAmount());
+                    expenseTotal = 0;
+                    for (double num : expenseSums) {
+                        expenseTotal += num;
+
+                    }
+
+                }
+                System.out.println("Totala utgifter " + expenseTotal);
+                System.out.printf("Pengar kvar: ");
+                System.out.println(incomeTotal - expenseTotal);
 
                 break;
+            case 6:
+                System.exit(6);
+                break;
 
-    }
+        }
 
 }
 
