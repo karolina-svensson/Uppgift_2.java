@@ -12,7 +12,7 @@ public class IncomeStorage {
     private Map<String, Income> incomelist;
 
     private String filename = "src/main/income.json";
-    //private String filename = "src/main/budgettracker.json";
+
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 
